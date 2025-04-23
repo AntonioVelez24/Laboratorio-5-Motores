@@ -15,8 +15,16 @@ public class GameManager : MonoBehaviour
 
     private bool activeAudioPanel = false;
     private bool activeExitPanel = false;
-    private bool startingGame = false;
 
+    private void Start()
+    {
+        menuCamera.Priority = 100;
+        startCamera.Priority = 0;
+        virtualCamera1.Priority = 0;
+        virtualCamera2.Priority = 0;
+        audioPanel.SetActive(false);
+        exitPanel.SetActive(false);
+    }
     public void SetAudioPanel()
     {
         if (activeAudioPanel == false)
